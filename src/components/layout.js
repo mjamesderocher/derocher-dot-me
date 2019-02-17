@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import ThemeSwitch from '../components/ThemeSwitch'
+
+import { rhythm, scale } from '../utils/typography'
 
 class Template extends React.Component {
   render() {
@@ -10,8 +11,19 @@ class Template extends React.Component {
 
     if (location.pathname === rootPath) {
       header = (
-        <h1>
+        <h1
+          style={{
+            ...scale(1.5),
+            marginBottom: rhythm(1.5),
+            marginTop: 0,
+          }}
+        >
           <Link
+            style={{
+              boxShadow: 'none',
+              textDecoration: 'none',
+              color: 'inherit',
+            }}
             to={'/'}
           >
             Derocher.me
@@ -20,8 +32,19 @@ class Template extends React.Component {
       )
     } else {
       header = (
-        <h3>
+        <h3
+          style={{
+            fontFamily: 'Montserrat, sans-serif',
+            marginTop: 0,
+            marginBottom: rhythm(-1),
+          }}
+        >
           <Link
+            style={{
+              boxShadow: 'none',
+              textDecoration: 'none',
+              color: 'inherit',
+            }}
             to={'/'}
           >
             Derocher.me
@@ -30,15 +53,17 @@ class Template extends React.Component {
       )
     }
     return (
-      <React.Fragment>
-        <ThemeSwitch />
-        <main>
-          {header}
-          <article classname="hello">
-            {children}
-          </article>
-        </main>
-      </React.Fragment>
+      <div
+        style={{
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          maxWidth: rhythm(24),
+          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+        }}
+      >
+        {header}
+        {children}
+      </div>
     )
   }
 }
