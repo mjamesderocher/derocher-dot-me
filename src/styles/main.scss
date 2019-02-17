@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Kalam:400,700');
+
+$font__heading: 'Kalam', cursive;
+$font__body: sans-serif;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+body {
+	font-family: $font__body;
+}
+
+#light-theme:checked ~ main {
+	--color-bg: white;
+	--color-text: black;
+}
+
+#dark-theme:checked ~ main {
+	--color-bg: black;
+	--color-text: white;
+}
+
+main {
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	transition: all .5s;
+}
+
+img {
+	width: 100%;
+	max-width: 100%;
+}
+
+h1, h2 {
+	font-family: $font__heading;
+	font-weight: normal;
+}
+
+a {
+	color: var(--color-text);
+	text-decoration: none;
+	position: relative;
+	background: linear-gradient(to bottom, rgba(247, 227, 49, 0) 0%, rgba(247, 227, 49, 0) 40%, #f7e331 50%, #f7e331 80%, rgba(247, 227, 49, 0) 90%, rgba(247, 227, 49, 0) 100%);
+}
+
+h2 a {
+	background: linear-gradient(to bottom, rgba(247, 227, 49, 0) 0%, rgba(247, 227, 49, 0) 40%, #f7e331 50%, #f7e331 80%, rgba(247, 227, 49, 0) 90%, rgba(247, 227, 49, 0) 100%);
+}
+
+a:after, a:before {
+	content: '';
+    background: radial-gradient(ellipse at center, #f7e331 0%, #f7e331 20%, rgba(247, 227, 49, 0) 35%, rgba(247, 227, 49, 0) 100%);
+    position: absolute;
+    height: 100%;
+    width: 20px;
+    z-index: -1;
+    bottom: -2px;
+}
+
+h2 a:after, h2 a:before {
+    background: radial-gradient(ellipse at center, #f7e331 0%, #f7e331 20%, rgba(247, 227, 49, 0) 35%, rgba(247, 227, 49, 0) 100%);
+    bottom: -5px;
+}
+
+a:after {
+	right: -10px;
+}
+
+a:before {
+	left: -10px;
+}
+
+a:hover {
+	background: linear-gradient(to bottom, rgba(247, 227, 49, 0) 0%, rgba(247, 227, 49, 0) 5%, #f7e331 15%, #f7e331 80%, rgba(247, 227, 49, 0) 90%, rgba(247, 227, 49, 0) 100%)
+}
+
+a:hover:after, a:hover:before {
+    background: radial-gradient(ellipse at center, #f7e331 30%, #f7e331 44%, rgba(247, 227, 49, 0) 59%, rgba(247, 227, 49, 0) 100%);
+    bottom: 1px;
+}
