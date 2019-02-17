@@ -22,6 +22,8 @@ class Bio extends React.Component {
             You can follow him on Twitter
           </a>
         </p>
+        <script src="https://donorbox.org/install-popup-button.js" type="text/javascript" defer></script>
+<a className="dbox-donation-button" href="https://donorbox.org/partner-with-me">Donate</a>
 		</div>
       </div>
     )
